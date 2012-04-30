@@ -1,0 +1,26 @@
+<h1>Edit host</h1>
+
+	<div class="row">
+	<div class="span6 offset3">
+	<%= form_for(@host) do |f| %>
+	<%= render 'partials/error_messages', :object => f.object%>	
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>		
+		
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+		
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+		
+		<%= f.label :password %><br />
+		<%= f.password_field :password %>
+		
+		<%= f.label :password_confirmation, "Confirmation" %><br />
+		<%= f.password_field :password_confirmation %>
+		
+		<%= f.submit "Save changes", :class => "btn btn-large btn-primary" %>
+		<% end %>
+		
+	</div>
+	</div>

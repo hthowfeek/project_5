@@ -1,0 +1,14 @@
+<h1>All hosts</h1>
+
+<ul class="host">
+<% @hosts.each do |host| %>
+<li>
+<%= gravatar_for host, :size => 30 %>
+
+<%= link_to host.first_name, host %>
+<% if current_host.admin?%>
+<%= link_to "delete", user, :method => delete, :confirm => "You sure?", :title=>"Delete #{user.name}"%>
+</li>
+<% end %>
+</ul>
+<% end %>

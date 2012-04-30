@@ -1,0 +1,20 @@
+<div class = "row">
+	<aside class = "span4">
+		<section>
+			<h1>
+				<%= gravatar_for @host %>
+				<%= @host.first_name %> <%= @host.last_name %></br>
+			</h1>
+		</section>
+	</aside>
+	<div class="span4">
+		<% if @host.parties.any?%>
+		<h3>Parties (<%= @host.parties.count %>)<h3>
+		<ol class="parties">
+			<%= render @parties%>
+		</ol>
+		<%= will_paginate @parties%>
+		<% end %>
+	</div>	
+</div>	
+
